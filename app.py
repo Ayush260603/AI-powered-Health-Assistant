@@ -4,19 +4,19 @@ from transformers import pipeline
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
-nltk.download('punkt')
-nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
 chatbot=pipeline("text-generation",model="distilgpt2")
 
-def preprocess_input(user_input):
-    stop_words = set(stopwords.words('english'))
-    words = word_tokenize(user_input)
-    filtered_words = [word for word in words if word.lower() not in stop_words]
-    return ' '.join(filtered_words)
+# def preprocess_input(user_input):
+    # stop_words = set(stopwords.words('english'))
+    # words = word_tokenize(user_input)
+    # filtered_words = [word for word in words if word.lower() not in stop_words]
+    # return ' '.join(filtered_words)
 
 def healthcare_chatbot(user_input):
-    user_input = preprocess_input(user_input).lower()
+    # user_input = preprocess_input(user_input).lower()
     if "symptom" in user_input:
         return "please consult any specialised doc"
     elif "appointment" in user_input:
